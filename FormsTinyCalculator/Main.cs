@@ -86,7 +86,7 @@ namespace FormsTinyCalculator {
 			_operand = ((Button)sender).Text;
 		}
 
-		void DigitClicked(object sender, System.EventArgs e) {
+		void DigitClicked(object sender, EventArgs e) {
 			var text = ((Button)sender).Text;
 			if (string.IsNullOrEmpty(_operand)) {
 				_digit1 = int.Parse(text);
