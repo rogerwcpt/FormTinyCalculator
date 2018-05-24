@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using System;
 using System.Linq;
+using System.Data;
 
 namespace FormsTinyCalculator {
 	
@@ -29,7 +30,8 @@ namespace FormsTinyCalculator {
 		public DisplayLabel() {
 			Text = "0";
 			FontSize = 36;
-			HorizontalOptions = LayoutOptions.End; VerticalOptions = LayoutOptions.Center;
+			HorizontalOptions = LayoutOptions.End; 
+			VerticalOptions = LayoutOptions.Center;
 			BackgroundColor = Color.Black; TextColor = Color.White;
 			this.SetValue(Grid.RowProperty, 0);
 			this.SetValue(Grid.ColumnProperty, 0);
@@ -39,16 +41,15 @@ namespace FormsTinyCalculator {
 
 	public class MainPage : ContentPage {
 		private Label _displayLabel = new DisplayLabel();
-		private string _operand = null;
+		private string _expression, _digits;
 
 		private (string, ButtonType, int, int, int)[] _buttonStruct = new[] {
 			("7", ButtonType.Digit, 1, 0, 1), ("8", ButtonType.Digit, 1, 1, 1), ("9", ButtonType.Digit, 1, 2, 1), ("/", ButtonType.Operand, 1, 3, 1),
-			("4", ButtonType.Digit, 2, 0, 1), ("5", ButtonType.Digit, 2, 1, 1), ("6", ButtonType.Digit, 2, 2, 1), ("x", ButtonType.Operand, 2, 3, 1),
+			("4", ButtonType.Digit, 2, 0, 1), ("5", ButtonType.Digit, 2, 1, 1), ("6", ButtonType.Digit, 2, 2, 1), ("*", ButtonType.Operand, 2, 3, 1),
 			("1", ButtonType.Digit, 3, 0, 1), ("2", ButtonType.Digit, 3, 1, 1), ("3", ButtonType.Digit, 3, 2, 1), ("-", ButtonType.Operand, 3, 3, 1),
 			("0", ButtonType.Digit, 4, 0, 3), ("+", ButtonType.Operand, 4, 3, 1),
 			("C", ButtonType.Cancel, 5, 0, 1), ("=", ButtonType.Total, 5, 1, 3)
 		};
-		private int _digit1, _digit2;
 
 		public MainPage() {
 			var grid = new Grid() { BackgroundColor = Color.Black, RowSpacing = 1, ColumnSpacing = 1 };
@@ -70,30 +71,36 @@ namespace FormsTinyCalculator {
 
 		private void CancelClicked(object sender, EventArgs e) {
 			_displayLabel.Text = "0";
-			_operand = null;
+			_expression = null;
+			_digits = null;
 		}
 
 		private void TotalClicked(object sender, EventArgs e) {
-			switch(_operand) {
-				case "+": _displayLabel.Text = (_digit1 + _digit2).ToString(); break;
-				case "-": _displayLabel.Text = (_digit1 - _digit2).ToString(); break;
-				case "*": _displayLabel.Text = (_digit1 * _digit2).ToString(); break;
-				case "/": _displayLabel.Text = (_digit1 / _digit2).ToString(); break;
-			}
+			_displayLabel.Text = Convert.ToDouble(new DataTable().Compute(_expression, null)).ToString();
+			_digits = null;
+			_expression = null;
 		}
 
 		private void OperandClicked(object sender, EventArgs e) {
-			_operand = ((Button)sender).Text;
+			_expression += ((Button)sender).Text;
+			_digits = null;
 		}
 
-		void DigitClicked(object sender, EventArgs e) {
-			var text = ((Button)sender).Text;
-			if (string.IsNullOrEmpty(_operand)) {
-				_digit1 = int.Parse(text);
-			} else {
-				_digit2 = int.Parse(text);
+		private void DigitClicked(object sender, EventArgs e) {
+			_digits += ((Button)sender).Text;
+			_displayLabel.Text = _digits;
+			_expression += ((Button)sender).Text;
+		}
+
+		private void SetValues(string digits, string expression, string display)
+		{
+			if (digits == null)
+			{
+				_digits = null;
+			} else
+			{
+				_digits += digits;
 			}
-			_displayLabel.Text = text;
 		}
 	}
 }
