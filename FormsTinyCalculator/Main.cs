@@ -91,16 +91,5 @@ namespace FormsTinyCalculator {
 			_displayLabel.Text = _digits;
 			_expression += ((Button)sender).Text;
 		}
-
-		private void SetValues(string digits, string expression, string display)
-		{
-			if (digits == null)
-			{
-				_digits = null;
-			} else
-			{
-				_digits += digits;
-			}
-		}
 	}
 }
