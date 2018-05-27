@@ -7,6 +7,7 @@ Clients:
 - Android
 - iOS
 - Mac
+- Windows Universal Platform
 
 ![Calculator screenshot](screenshot.png)
 
