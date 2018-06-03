@@ -1,5 +1,5 @@
 # FormTinyCalculator
-Calculator written using Xamarin Forms (no XAML) in less than 100 lines of code.
+Calculator written using Xamarin Forms (no XAML) in +-75 lines of code (if you remove the superfluous braces)
 No third party libraries used, just what is available in Xamarin.
 
 Clients:
