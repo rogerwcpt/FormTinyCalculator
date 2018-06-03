@@ -19,9 +19,9 @@ namespace FormsTinyCalculator {
 			TextColor = Color.Black;
 			BackgroundColor =  Colors[(int)buttonType];
 			ButtonType = buttonType;
-			this.SetValue(Grid.RowProperty, row);
-			this.SetValue(Grid.ColumnProperty, col);
-			this.SetValue(Grid.ColumnSpanProperty, colspan);
+			SetValue(Grid.RowProperty, row);
+			SetValue(Grid.ColumnProperty, col);
+			SetValue(Grid.ColumnSpanProperty, colspan);
 		}
 		public ButtonType ButtonType { get;  }
 	}
@@ -33,9 +33,7 @@ namespace FormsTinyCalculator {
 			HorizontalOptions = LayoutOptions.End; 
 			VerticalOptions = LayoutOptions.Center;
 			BackgroundColor = Color.Black; TextColor = Color.White;
-			this.SetValue(Grid.RowProperty, 0);
-			this.SetValue(Grid.ColumnProperty, 0);
-			this.SetValue(Grid.ColumnSpanProperty, 4);
+			SetValue(Grid.ColumnSpanProperty, 4);
 		}
 	}
 
@@ -85,9 +83,9 @@ namespace FormsTinyCalculator {
 		}
 
 		private void DigitClicked(object sender, EventArgs e) {
-			_displayLabel.Text = _digits;
 			_expression += (sender as Button)?.Text;
 			_digits += (sender as Button)?.Text;
+			_displayLabel.Text = _digits;
 		}
 	}
 }
