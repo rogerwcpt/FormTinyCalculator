@@ -77,8 +77,8 @@ namespace FormsTinyCalculator {
 
 		private void TotalClicked(object sender, EventArgs e) {
 			_displayLabel.Text = Convert.ToDouble(new DataTable().Compute(_expression, null)).ToString();
-			_digits = null;
-			_expression = null;
+			_digits = _displayLabel.Text;
+			_expression = _displayLabel.Text;
 		}
 
 		private void OperandClicked(object sender, EventArgs e) {
