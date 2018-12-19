@@ -8,6 +8,7 @@ Clients:
 - iOS
 - Mac
 - Windows Universal Platform
+- Classic Windows Desktop (WPF)
 
 ![Calculator screenshot](screenshot.png)
 
