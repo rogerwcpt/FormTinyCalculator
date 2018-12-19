@@ -1,0 +1,19 @@
+﻿<wpf:FormsApplicationPage  x:Class="FormsTinyCalculator.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormsTinyCalculator.WPF"
+        xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
+        mc:Ignorable="d"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        VerticalContentAlignment="Center"
+        HorizontalContentAlignment="Center"
+        Title="Calculator" 
+        Height="400" 
+        Width="600">
+    <Grid>
+        
+    </Grid>
+</wpf:FormsApplicationPage>
