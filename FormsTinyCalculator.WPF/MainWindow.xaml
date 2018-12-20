@@ -11,8 +11,8 @@
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Center"
         Title="Calculator" 
-        Height="400" 
-        Width="600">
+        Height="680" 
+        Width="400">
     <Grid>
         
     </Grid>
