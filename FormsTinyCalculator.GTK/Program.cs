@@ -1,6 +1,4 @@
 ﻿using System;
-using Gtk;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
 
 namespace FormsTinyCalculator.GTK {
@@ -14,7 +12,11 @@ namespace FormsTinyCalculator.GTK {
 
 			var app = new FormsTinyCalculator.App();
 
-			var window = new FormsWindow();
+			var window = new FormsWindow {
+				DefaultHeight = 600,
+				DefaultWidth = 400
+			};
+
 			window.LoadApplication(app);
 			window.SetApplicationTitle("Calculator");
 			window.Show();
