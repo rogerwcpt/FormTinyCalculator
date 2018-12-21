@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ooui.Forms" Version="0.10.222" />
+    <PackageReference Include="Ooui.Wasm" Version="0.10.222" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FormsTinyCalculator\FormsTinyCalculator.csproj" />
+  </ItemGroup>
+</Project>
