@@ -1,7 +1,8 @@
 # Xamarin Forms Tiny Calculator
 Calculator written using Xamarin Forms (no XAML) in +-75 lines of code (if you remove the superfluous braces).
 No third party libraries used, just what is available in Xamarin.
-This app will run on 6 platforms:
+
+This app will run on 7 platforms:
 
 Platform clients:
 
@@ -11,6 +12,7 @@ Platform clients:
 - UWP (Windows Universal Platform, including XBOX)
 - WPF (Classic Windows Desktop)
 - GTK (for Linux, Mac and Windows)
+- WASM (Web Assembly, only seems to work in FireFox)
 
 ![Calculator screenshot](screenshot.png)
 
