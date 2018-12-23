@@ -39,9 +39,11 @@ Platform clients:
 #### Windows WPF 
 <img src="screenshots/windows-wpf-screenshot.png" height="400">
 
-#### Windows Linux
+#### Linux
 <img src="screenshots/linux-screenshot.png" height="400">
 
+#### Web Assembly (browser)
+<img src="screenshots/wasm-screenshot.png" height="400">
 
 ### Notes:
 
