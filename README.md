@@ -1,9 +1,9 @@
 # Xamarin Forms Tiny Calculator
 Simple Calculator written using Xamarin Forms (no XAML) in +-90 lines of code.
 
-This project inspired by the a tweet by [Don Syme](https://twitter.com/dsyme/status/996720094683258880?lang=en) that managed to create a F# based calculator using Elmish on top of Xamarin Forms.  His solution weighed in at 95 lines of code.
+This project inspired by a tweet by [Don Syme](https://twitter.com/dsyme/status/996720094683258880?lang=en) who managed to create a F# based calculator using Elmish, which runs on top of Xamarin Forms.  His solution weighed in at 95 lines of code.
 
-Another challenger [Thomas Burkart](https://twitter.com/ThomasBurkhartB/status/997088751724761088) also accepted the challenge for a Flutter equivalent, and his solution weighed in at +-90 lines of code.
+[Thomas Burkart](https://twitter.com/ThomasBurkhartB/status/997088751724761088) also accepted the challenge for a Flutter equivalent, and his solution weighed in at +-90 lines of code.
 
 This app will run on 7 platforms:
 
@@ -30,7 +30,7 @@ Platform clients:
 #### iOS
 <img src="screenshots/ios-screenshot.png" height="400">
 
-#### Mac OX
+#### Mac OS X
 <img src="screenshots/macos-screenshot.png" height="400">
 
 #### Windows UWP 
@@ -47,7 +47,8 @@ Platform clients:
 
 ### Notes:
 
- - UI ported from https://github.com/xamarin/mobile-samples/tree/master/LivePlayer/BasicCalculator
+- UI ported from https://github.com/xamarin/mobile-samples/tree/master/LivePlayer/BasicCalculator
+- All classes have been crammed into Main.cs to more easily count the lines of code.
 - Braces add more lines of code, so I've used trailing braces for more compact code).
 - With the Exception of the WASM project, no third party libraries used, just what is available in Xamarin.  WASM uses [Ooui](https://github.com/praeclarum/Ooui)
 - To run the WASM project, build it, then open a terminal at to FormsTinyCalculator.Wasm/bin/Debug/netcoreapp2.1/dist and run `python server.py` to start a lightweight python web server in this folder.  and then open your browser at http://localhost:8000/ . If you have Firefox, you can simply open the index.html file from the same folder without having to start the python web server.
