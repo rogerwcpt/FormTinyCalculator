@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FormsTinyCalculator.Views.MainView">
+    <ContentPage.Resources>
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="36" />
+        </Style>
+        <Style x:Key="DigitButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+        <Style x:Key="OperandButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}" TargetType="Button">
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="BackgroundColor" Value="Orange" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+        <Style x:Key="CancelButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Gray" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>        
+    </ContentPage.Resources>
+    <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Black" TextColor="White" FontSize="36" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="{Binding Display}" />
+        <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource DigitButtonStyle}" Text="7" Command="{Binding DigitCommand}" CommandParameter="7" />
+        <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource DigitButtonStyle}" Text="8" Command="{Binding DigitCommand}" CommandParameter="8" />
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource DigitButtonStyle}" Text="9" Command="{Binding DigitCommand}" CommandParameter="9" />
+        <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource OperandButtonStyle}" Text="/" Command="{Binding OperandCommand}" CommandParameter="/" />
+        <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource DigitButtonStyle}" Text="4" Command="{Binding DigitCommand}" CommandParameter="4" />
+        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource DigitButtonStyle}" Text="5" Command="{Binding DigitCommand}" CommandParameter="5" />
+        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource DigitButtonStyle}" Text="6" Command="{Binding DigitCommand}" CommandParameter="6" />
+        <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource OperandButtonStyle}" Text="*" Command="{Binding OperandCommand}" CommandParameter="*" />
+        <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource DigitButtonStyle}" Text="1" Command="{Binding DigitCommand}" CommandParameter="1" />
+        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource DigitButtonStyle}" Text="2" Command="{Binding DigitCommand}" CommandParameter="2" />
+        <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource DigitButtonStyle}" Text="3" Command="{Binding DigitCommand}" CommandParameter="3" />
+        <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource OperandButtonStyle}" Text="-" Command="{Binding OperandCommand}" CommandParameter="-" />
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource DigitButtonStyle}" Text="0" Command="{Binding DigitCommand}" CommandParameter="0" />
+        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource OperandButtonStyle}" Text="+" Command="{Binding OperandCommand}" CommandParameter="+" />
+        <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource CancelButtonStyle}" Text="C"  Command="{Binding CancelCommand}" CommandParameter="c" />
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource OperandButtonStyle}" Text="=" Command="{Binding TotalCommand}" CommandParameter="=" />
+    </Grid>
+</ContentPage>
