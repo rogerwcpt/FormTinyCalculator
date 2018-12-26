@@ -12,7 +12,6 @@ namespace FormsTinyCalculator.ViewModels {
 		private string _expression;
 		private string _digits;
 
-
 		public MainViewModel() {
 			CancelCommand = new Command(DoCancelCommand);
 			TotalCommand = new Command(DoTotalCommand);
