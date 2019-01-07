@@ -15,7 +15,7 @@ Platform clients:
 - UWP (Windows Universal Platform, including XBOX)
 - WPF (Classic Windows Desktop)
 - GTK (for Linux, Mac and Windows)
-- WASM (Web Assembly)
+- WASM (Web Assembly) - Demo Link here:  [https://rogerwcpt.github.io/calculator](https://rogerwcpt.github.io/calculator)
 
 ![Main File](FormsTinyCalculator/Main.cs)
 
